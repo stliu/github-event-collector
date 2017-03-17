@@ -54,7 +54,7 @@ public class GithubWebhookController {
     public ResponseEntity<String> githubWebhookEvents(
             @RequestHeader("X-GitHub-Event") String event,
             @RequestHeader("X-GitHub-Delivery") String deliveryId,
-            @RequestHeader("X-Hub-Signature") String signature,
+            @RequestHeader(value = "X-Hub-Signature", required = false) String signature,
             @RequestBody String payload) {
 
 
